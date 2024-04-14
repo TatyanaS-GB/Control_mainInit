@@ -39,6 +39,23 @@ string[] FilterShortStrings(string[] array) //Создаем функцию ко
     return newArray; // возвращаем результат.
 }
 
+void PrintArray(string[] newArray, string[] array) //создаем функцию вывода на печать, с типом Void, которая ничего не возвращает и  
+//передаем в качестве параметра два массива исходный и новый со строками в которых количество символов <=3 .
+{
+    Console.Write("\n[");
+    Console.Write(string.Join(", ", array));// выводим на печать исходный массив в квадратных скобках.
+    Console.Write("]");
+
+    Console.Write(" => [");
+    foreach (string str in newArray) //  цикл для прохождения по новому массиву и выводу строк  массива с символами <=3
+    {
+        if (str.Length <= 3)
+        {
+            Console.Write("\"" + str + "\",");
+        }
+    }
+    Console.Write("]");
+}
 
 Console.WriteLine("Введите строки массива, состоящие из символов, через запятую : ");// ввод пользователя (массива с клавиатуры)
 string[] array = Console.ReadLine()!.Split(","); //вызов метода для считывания с консоли. 
