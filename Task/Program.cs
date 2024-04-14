@@ -59,3 +59,10 @@ void PrintArray(string[] newArray, string[] array) //создаем функци
 
 Console.WriteLine("Введите строки массива, состоящие из символов, через запятую : ");// ввод пользователя (массива с клавиатуры)
 string[] array = Console.ReadLine()!.Split(","); //вызов метода для считывания с консоли. 
+
+CountShortStrings(array);
+
+string[] newArray2 = FilterShortStrings(array); //новая переменная с измененным названием для вызова функции.
+FilterShortStrings(newArray2); 
+
+PrintArray(newArray2, array); //вызов функции для вывода на печать.
